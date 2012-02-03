@@ -1,32 +1,34 @@
-<div class='mainInfo'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Вход в систему</title>
+        <link href="/assets/html/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/html/css/fieldset.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/assets/html/js/jquery.js"></script>
+    </head>
 
-	<div class="pageTitle">Login</div>
-    <div class="pageTitleBorder"></div>
-	<p>Please login with your email address and password below.</p>
-	
-	<div id="infoMessage"><?php echo $message;?></div>
-	
-    <?php echo form_open("auth/login");?>
-    	
-      <p>
-      	<label for="email">Email:</label>
-      	<?php echo form_input($email);?>
-      </p>
-      
-      <p>
-      	<label for="password">Password:</label>
-      	<?php echo form_input($password);?>
-      </p>
-      
-      <p>
-	      <label for="remember">Remember Me:</label>
-	      <?php echo form_checkbox('remember', '1', FALSE);?>
-	  </p>
-      
-      
-      <p><?php echo form_submit('submit', 'Login');?></p>
+    <body>
 
-      
-    <?php echo form_close();?>
+        <div id="container">
+            <div class="login">
+                <div class="title"><h1>Авторизация</h1></div>
+                <div class="login_bg">
+                    <?php echo form_open("auth/login",array('id'=>"form_login"));?>
+                    <fieldset>
+                        <label for="name">Email</label>
+                        <?php echo form_input($email);?>
+                        <label for="pass">Пароль</label>
+                        <?php echo form_input($password);?>
 
-</div>
+                    </fieldset>
+                    <div class="clr"></div>
+                    <input type="submit" class="button" value=""/>
+                    <?php echo form_close();?>
+                    <!-- end .login_bg --> </div>
+                <!-- end .login --></div>
+
+            <!-- end .container --></div>
+    </body>
+</html>
+

@@ -49,11 +49,11 @@ class Auth extends Controller {
 		if ($this->ion_auth->logged_in())
 		{
 			//already logged in so no need to access this page
-			redirect($this->config->item('base_url'), 'refresh');
+			redirect($this->config->item('base_url').'/jobs', 'refresh');
 		}
 
 		//validate form input
-		$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
+		$this->form_validation->set_rules('email', 'Email Address', 'required|xss');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
 		if ($this->form_validation->run() == true)
@@ -61,11 +61,11 @@ class Auth extends Controller {
 			//check for "remember me"
 			$remember = (bool) $this->input->post('remember');
 
-			if ($this->ion_auth->login($this->input->post('email'), $this->input->post('password'), $remember))
+			if ($this->ion_auth->login(set_value('email'), set_value('password'), $remember))
 			{ //if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect($this->config->item('base_url'), 'refresh');
+                                redirect($this->config->item('base_url'), 'refresh');
 			}
 			else
 			{ //if the login was un-successful

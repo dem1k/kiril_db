@@ -27,12 +27,12 @@
 	/**
 	 * Site Title, example.com
 	 */
-	$config['site_title']		   = "Example.com";
+	$config['site_title']		   = "Database";
 	
 	/**
 	 * Admin Email, admin@example.com
 	 */
-	$config['admin_email']		   = "admin@example.com";
+	$config['admin_email']		   = "dem1k@ya.ru";
 	
 	/**
 	 * Default group, use name

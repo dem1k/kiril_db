@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container {
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+}
+*, html {
+	margin: 0px;
+	padding: 0px;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #000;
+}
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #00A0C6;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.clr {
+	clear: both;
+}
+
+.login {
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top: -200px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: -200px;
+}
+.login_bg {
+	background-image: url(../images/login_bg.png);
+	background-repeat: no-repeat;
+	height: 258px;
+	width: 361px;
+	margin-top: 43px;
+}
+.title {
+	margin-left: 25px;
+	margin-bottom: 15px;
+	float: left;
+}
+.table {
+	font-family: Arial;
+	font-size: 13px;
+	color: #4D4D4D;
+	background-color: #FFF;
+}
+.table_title {
+	background-image: url(../images/table_title_bg.png);
+	background-repeat: repeat-x;
+	height: 30px;
+	font-size: 12px;
+	background-color:transparent;
+}
+tr:nth-child(even) {background: #F2F2F2}tr:hover {
+	background-color: #E6F5FF;
+}
+.add input{
+	width: 97px;
+	background-image: url(../images/add.png);
+	height: 24px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color:transparent;
+	float: right;
+}
+.add input:hover {
+	cursor: auto;
+	background-image: url(../images/add_hover.png);
+}
+.pagination {
+	margin-top: 20px;
+}
+.pagination li {
+	float: left;
+	list-style-type: none;
+	padding-right: 8px;
+	padding-left: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-right: 3px;
+	margin-left: 3px;
+	background-color: #FFF;
+	border: 1px solid #B2B2B2;
+}
+.pagination img {
+	float: left;
+}
+.pagination a  {
+	text-align: center;
+	color: #1B75BB;
+	text-decoration: none;
+}
+.pagination li:hover {
+	border: 1px solid #006CC9;
+	background-color: #0091DB;
+	color: #FFF;
+}
+.add_materials {
+	margin-top: 20px;
+	float: none;
+}
+.add_materials input {
+	background-image: url(../images/input_bg.png);
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	height: 32px;
+	width: 421px;
+	background-color: transparent;
+	font-size: 18px;
+	font-weight: bold;
+}
+.add_materails_field li {
+	list-style-type: none;
+	line-height: 42px;
+}
+.add_materails_field input {
+	background-image: url(../images/input_mat_price.png);
+	background-repeat: no-repeat;
+	height: 23px;
+	width: 127px;
+	background-color: transparent;
+	font-size: 14px;
+	font-weight: normal;
+	color: #4D4D4D;
+}
+#cancel {
+	background-image: url(../images/cancel.png);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 60px;
+}
+#send {
+	background-image: url(../images/send.png);
+	height: 30px;
+	width: 100px;
+}
+#cancel:hover {
+	background-image: url(../images/cancelhover.png);
+}
+#send:hover {
+	background-image: url(../images/sendhover.png);
+}

@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*** НЕОБХОДИМЫЕ СТИЛИ ***/
+  .sf-menu, .sf-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+  .sf-menu {
+  line-height: 1.0;
+  }
+  .sf-menu ul {
+	position: absolute;
+	top: -999em;
+	width: 204px;
+  }
+  .sf-menu ul li {
+  width: 100%;
+  }
+  .sf-menu li:hover {
+  visibility: inherit; 
+  }
+  .sf-menu li {
+  float:  left;
+  position: relative;
+  }
+  .sf-menu a {
+  display: block;
+  position: relative;
+  }
+  .sf-menu li:hover ul,
+  .sf-menu li.sfHover ul {
+	left:  0;
+	top:  38px;
+	z-index: 99;
+  }
+  ul.sf-menu li:hover li ul,
+  ul.sf-menu li.sfHover li ul {
+  top: -999em;
+  }
+  ul.sf-menu li li:hover ul,
+  ul.sf-menu li li.sfHover ul {
+	left: 10em;
+	top: 0;
+	background-color: #008DF2;
+  }
+  ul.sf-menu li li:hover li ul,
+  ul.sf-menu li li.sfHover li ul {
+  top: -999em;
+  }
+  ul.sf-menu li li li:hover ul,
+  ul.sf-menu li li li.sfHover ul {
+  left: 10em; 
+  top: 0;
+  }
+/*** СКИН ДЕМО ***/
+  .sf-menu {
+	float: left;
+	margin-top: 2px;
+  }
+  .sf-menu a {
+	text-decoration:none;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #CCCCCC;
+	height: 25px;
+	padding-top: 13px;
+	padding-left: 20px;
+	padding-right: 20px;
+  }
+  .sf-menu a, .sf-menu a:visited  {
+	color: #4D4D4D;
+  }
+  .sf-menu li {
+	text-align: left;
+  }
+  .sf-menu li li {
+	background-color: #FFF;
+	font-size: 12px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E6E6E6;
+  }
+.sf-menu li li a:hover {
+	background-color: #008DF2;
+	color: #FFF;
+}
+.sf-menu li li a {
+	height: 20px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 5px;
+}
+  .sf-menu li li li {
+  background: #9AAEDB;
+  }
+  .sf-menu li:hover, .sf-menu li.sfHover,
+  .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	outline: 0;
+	background-color: #FFF;
+  }
+/*** СТРЕЛКИ **/
+  .sf-menu a.sf-with-ul {
+  padding-right: 2.25em;
+  min-width: 1px; 
+  }
+  .sf-sub-indicator {
+  position: absolute;
+  display: block;
+  right: .75em;
+  top: 1.05em; /* ТОЛЬКО ДЛЯ IE6 */
+  width: 10px;
+  height: 10px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: url('images/arrows-ffffff.png') no-repeat  -10px -100px; 
+  }
+  a > .sf-sub-indicator {  
+  top: .8em;
+  background-position: 0  -100px; 
+  }
+a:focus > .sf-sub-indicator,
+  a:hover > .sf-sub-indicator,
+  a:active > .sf-sub-indicator,
+  li:hover > a > .sf-sub-indicator,
+  li.sfHover > a > .sf-sub-indicator {
+  background-position: -10px  -100px; 
+  }
+
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+  .sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+.sf-menu ul a:focus > .sf-sub-indicator,
+  .sf-menu ul a:hover > .sf-sub-indicator,
+  .sf-menu ul a:active > .sf-sub-indicator,
+  .sf-menu ul li:hover > a > .sf-sub-indicator,
+  .sf-menu ul li.sfHover > a > .sf-sub-indicator {
+  background-position:  -10px 0; 
+  }
+/*** ТЕНИ ДЛЯ ВСЕХ БРАУЗЕРОВ,  КРОМЕ IE6 ***/
+  .sf-shadow ul {
+  background: url('images/shadow.png') no-repeat bottom  right;
+  padding: 0 8px 9px 0;
+  -moz-border-radius-bottomleft:  17px;
+  -moz-border-radius-topright:  17px;
+  -webkit-border-top-right-radius:  17px;
+  -webkit-border-bottom-left-radius:  17px;
+  }
+  .sf-shadow ul.sf-shadow-off {
+  background:  transparent;
+  }.menu_l {
+	background-image: url(../images/menu_l.PNG);
+	height: 42px;
+	width: 7px;
+	float: left;
+}
+.menu_c {
+	background-image: url(../images/menu_c.PNG);
+	background-repeat: repeat-x;
+	float: left;
+	height: 42px;
+}
+.menu_r {
+	background-image: url(../images/menu_r.PNG);
+	height: 42px;
+	width: 7px;
+	float: left;
+}
+.menu {
+	margin-top: 30px;
+	float: left;
+	margin-bottom: 43px;
+}
+.current {
+	color: #000;
+}
