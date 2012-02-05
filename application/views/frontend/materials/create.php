@@ -1,53 +1,46 @@
+<script type="text/javascript" src="/assets/html/js/jquery.datePicker.js"></script>
+<script type="text/javascript" src="/assets/html/js/jquery.ui.datepicker-ru.js"></script>
 
-<!--h1>Создать материал</h1-->
+<script>
+    $(function() {
+        $( "#date" ).datepicker({
+            dateFormat: 'dd.mm.yy'
+        });
+        $("#date").datepicker($.datepicker.regional['ru']);
+    });
 
-
-<?= form_open('/materials/create');?>
-<!--table>
-    <tr>
-        <td>Название</td>
-        <td><?=form_input(array(
-                    'name'        => 'name',
-                    'id'          => 'name',
-                    )
-                    )?></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td><?=form_textarea(array(
-                    'name'        => 'description',
-                    'id'          => 'description',
-                    )
-                    )?></td>
-    </tr>
-
-
-</table-->
-
-
+</script>
 <div class="clr"></div>
-  <div class="add_materials">
- <?=form_input(array(
-                    'name'        => 'name',
-                    'id'          => 'name',
-                    )
-                    )?>
- <div class="add_materails_field">
- <ul>
- <li>Цена:<?=form_input(array(
-                    'name'        => 'name',
-                    'id'          => 'name',
-                    )
-                    )?></li>
- <li>Ед. изм.<?=form_input(array(
-                    'name'        => 'name',
-                    'id'          => 'name',
-                    )
-                    )?></li>
- <li>Дата изменения:</li>
- </ul>
- <input name="cancel" type="button" value=" " id="cancel" /> <input name="send" type="button" id="send" value=" " />
- </div><!--end.add_materials_field -->
-  </div><!--end.add_materials -->
-<!--?=form_submit(array('value'=>'save'));?-->
+<div class="add_materials">
+    <?=form_open('/materials/create');?>
+    <?=form_input(array(
+            'name'        => 'name',
+            'id'          => 'name',
+            )
+            )?>
+    <div class="add_materails_field">
+        <ul>
+            <li>Цена:<?=form_input(array(
+                        'name'        => 'price',
+                        'id'          => 'price',
+                        )
+                        )?></li>
+            <li>Ед. изм.<?=form_input(array(
+                        'name'        => 'units',
+                        'id'          => 'units',
+                        )
+                        )?></li>
+            <li>Дата изменения:<?=form_input(array(
+                        'name'        => 'date',
+                        'id'          => 'date',
+                        )
+                        )?></li>
+        </ul>
+        <input name="cancel" type="button" onclick="history.back();return false;" value=" " id="cancel" />
+        <input name="action" type="hidden"  value="save" />
+
+
+        <input name="send" type="submit" id="send" value=" " />
+    </div><!--end.add_materials_field -->
+</div><!--end.add_materials -->
 <?= form_close();?>

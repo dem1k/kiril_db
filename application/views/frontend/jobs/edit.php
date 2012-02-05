@@ -1,62 +1,63 @@
-<h1>Изменить работу: <?=$object->name?></h1>
+<script type="text/javascript" src="/assets/html/js/jquery.datePicker.js"></script>
+<script type="text/javascript" src="/assets/html/js/jquery.ui.datepicker-ru.js"></script>
+<script>
+    $(function() {
+        $( "#date" ).datepicker({
+            dateFormat: 'dd.mm.yy'
+        });
+        $("#date").datepicker($.datepicker.regional['ru']);
+    });
 
-<?= form_open('/jobs/edit/'.$object->id);?>
-<table>
-    <tr>
-        <td>Название</td>
-        <td><?=form_input(array(
-                    'name'        => 'name',
-                    'id'          => 'name',
+</script>
+<div class="clr"></div>
+<h1>Изменить работу: <?=$object->name?></h1>
+<div class="add_materials">
+    <?= form_open('/jobs/edit/'.$object->id);?>
+    <?=form_input(array(
+            'name'        => 'name',
+            'id'          => 'name',
             'value'=>set_value('name',$object->name),
-                    )
-                    )?></td>
-    </tr>
-    <tr>
-        <td>коэф.</td>
-        <td><?=form_input(array(
-                    'name'        => 'rate',
-                    'id'          => 'rate',
-            'value'=>set_value('rate',$object->rate),
-                    )
-                    )?></td>
-    </tr>
-    <tr>
-        <td>Цена 1</td>
-        <td><?=form_input(array(
+            )
+            )?>
+    <div class="add_materails_field">
+        <ul>
+            <li>Коэф.:  <?=form_input(array(
+                        'name'        => 'rate',
+                        'id'          => 'rate',
+                        'value'=>set_value('rate',$object->rate),
+                        )
+                        )?></li>
+            <li>Цена 1: <?=form_input(array(
                     'name'        => 'price1',
                     'id'          => 'price1',
-            'value'=>set_value('price1',$object->price1),
+                    'value'=>set_value('price1',$object->price1),
                     )
-                    )?></td>
-    </tr>
-    <tr>
-        <td>Цена 2</td>
-        <td><?=form_input(array(
+                    )?></li>
+            <li>Цена 2: <?=form_input(array(
                     'name'        => 'price2',
                     'id'          => 'price2',
-            'value'=>set_value('price2',$object->price2),
+                    'value'=>set_value('price2',$object->price2),
                     )
-                    )?></td>
-    </tr><tr>
-        <td>Ед.изм.</td>
-        <td><?=form_input(array(
-                    'name'        => 'units',
-                    'id'          => 'units',
-                    'value'=>set_value('units',$object->units),
-                    )
-                    )?></td>
-    </tr>
-    <tr>
-        <td>Дата</td>
-        <td><?=form_input(array(
-                    'name'        => 'date',
-                    'id'          => 'date',
-                    'value'=>set_value('date',$object->date),
-                    )
-                    )?></td>
-    </tr>
+                    )?></li>
+            <li>Ед. изм.: <?=form_input(array(
+                        'name'        => 'units',
+                        'id'          => 'units',
+                        'value'=>set_value('units',$object->units),
+                        )
+                        )?></li>
+            <li>Дата изменения: <?=form_input(array(
+                        'name'        => 'date',
+                        'id'          => 'date',
+                        'value'=>set_value('name', date('d.m.Y',$object->date)),
+                        )
+                        )?></li>
+
+        </ul>
+        <input name="cancel" type="button" onclick="history.back();return false;" value=" " id="cancel" />
+        <input name="action" type="hidden"  value="save" />
 
 
-</table>
-<?=form_submit(array('value'=>'save'));?>
+        <input name="send" type="submit" id="send" value=" " />
+    </div><!--end.add_materials_field -->
+</div><!--end.add_materials -->
 <?= form_close();?>

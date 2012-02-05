@@ -24,7 +24,6 @@ class Materials_model extends CI_Model {
 
     }
     function save($data) {
-
         $query = $this->db->insert('materials', $data);
         $id = $this->db->insert_id();
         return $id;
